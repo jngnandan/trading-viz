@@ -96,7 +96,7 @@ export default function Header() {
               minWidth: 200,
             }}
           >  
-            <a href="/homepage"> 
+            <a href="/"> 
             <MenuItem>
               <ListItemDecorator>
                 <HomeRoundedIcon />
