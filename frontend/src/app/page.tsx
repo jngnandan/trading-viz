@@ -1,24 +1,23 @@
-import Image from "next/image";
-import Head from 'next/head'
-import '@fontsource/inter';
+import React from 'react'
 
-export default function Home() {
+import Header from './header'
+
+import TradingViewWidget from './trading'
+import TradingHeatmap from './trading/trading-heatmap'
+
+function HomePage() {
   return (
     <div>
-      <Head>
-        <title>My page title</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-/>
-      <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-
-      </Head>
-
-      <p>Hello there</p>
-    </div>
-  );
+      <Header/>
+      <div className='flex flex-row justify-start pb-40 mx-8'>
+      
+      <div className='flex flex-col lg:flex-row lg:justify-between h-screen w-screen gap-6'>
+        <TradingViewWidget/>
+        <TradingHeatmap/>
+      </div>
+      </div>
+      </div>
+  )
 }
+
+export default HomePage

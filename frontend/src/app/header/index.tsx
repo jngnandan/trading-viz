@@ -159,7 +159,7 @@ export default function Header() {
             </MenuItem>
             </a>
             {/* <ListDivider /> */}
-            <a href="/features"> 
+            <a href="/futures"> 
             <MenuItem>
               <ListItemDecorator>
                 <InsightsRoundedIcon />
