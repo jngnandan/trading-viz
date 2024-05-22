@@ -5,17 +5,9 @@ import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 import Checkbox from '@mui/joy/Checkbox';
 import FormControl from '@mui/joy/FormControl';
-import FormLabel from '@mui/joy/FormLabel';
-import IconButton from '@mui/joy/IconButton';
 import Link from '@mui/joy/Link';
-import Tooltip from '@mui/joy/Tooltip';
 import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FilterListIcon from '@mui/icons-material/FilterList';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { visuallyHidden } from '@mui/utils';
 
 interface Data {
@@ -43,56 +35,6 @@ interface Data {
   Weight: number;
 }
 
-function createData(
-  id: string,
-  ticker: string,
-  Company: string,
-  Sector: string,
-  Industry: string,
-  Market: string,
-  PE: number | null,
-  EPS: number | null,
-  MarketCap: number | null,
-  BookValue: number | null,
-  DividendYield: number | null,
-  EBITDA: number | null,
-  PriceToSalesTrailing12Months: number | null,
-  FiftyTwoWeekHigh: number | null,
-  FiftyTwoWeekLow: number | null,
-  FiftyDayMovingAverage: number | null,
-  TwoHundredDayMovingAverage: number | null,
-  SharesOutstanding: number | null,
-  Price: number | null,
-  Quantity: number,
-  Invested: number | null,
-  Weight: number,
-): Data {
-  return {
-    id,
-    ticker,
-    Company,
-    Sector,
-    Industry,
-    Market,
-    PE,
-    EPS,
-    MarketCap,
-    BookValue,
-    DividendYield,
-    EBITDA,
-    PriceToSalesTrailing12Months,
-    FiftyTwoWeekHigh,
-    FiftyTwoWeekLow,
-    FiftyDayMovingAverage,
-    TwoHundredDayMovingAverage,
-    SharesOutstanding,
-    Price,
-    Quantity,
-    Invested,
-    Weight,
-  };
-}
-
 interface HeadCell {
   disablePadding: boolean;
   id: keyof Data;
@@ -101,134 +43,28 @@ interface HeadCell {
 }
 
 const headCells: readonly HeadCell[] = [
-  {
-    id: 'ticker',
-    numeric: false,
-    disablePadding: true,
-    label: 'Ticker',
-  },
-  {
-    id: 'Company',
-    numeric: true,
-    disablePadding: false,
-    label: 'Company',
-  },
-  {
-    id: 'Sector',
-    numeric: true,
-    disablePadding: false,
-    label: 'Sector',
-  },
-  {
-    id: 'Industry',
-    numeric: true,
-    disablePadding: false,
-    label: 'Industry',
-  },
-  {
-    id: 'Market',
-    numeric: true,
-    disablePadding: false,
-    label: 'Market',
-  },
-  {
-    id: 'PE',
-    numeric: true,
-    disablePadding: false,
-    label: 'PE',
-  },
-  {
-    id: 'EPS',
-    numeric: true,
-    disablePadding: false,
-    label: 'EPS',
-  },
-  {
-    id: 'MarketCap',
-    numeric: true,
-    disablePadding: false,
-    label: 'Market Cap',
-  },
-  {
-    id: 'BookValue',
-    numeric: true,
-    disablePadding: false,
-    label: 'Book Value',
-  },
-  {
-    id: 'DividendYield',
-    numeric: true,
-    disablePadding: false,
-    label: 'Dividend Yield',
-  },
-  {
-    id: 'EBITDA',
-    numeric: true,
-    disablePadding: false,
-    label: 'EBITDA',
-  },
-  {
-    id: 'PriceToSalesTrailing12Months',
-    numeric: true,
-    disablePadding: false,
-    label: 'Price to Sales Trailing 12 Months',
-  },
-  {
-    id: 'FiftyTwoWeekHigh',
-    numeric: true,
-    disablePadding: false,
-    label: '52 Week High',
-  },
-  {
-    id: 'FiftyTwoWeekLow',
-    numeric: true,
-    disablePadding: false,
-    label: '52 Week Low',
-  },
-  {
-    id: 'FiftyDayMovingAverage',
-    numeric: true,
-    disablePadding: false,
-    label: '50 Day Moving Average',
-  },
-  {
-    id: 'TwoHundredDayMovingAverage',
-    numeric: true,
-    disablePadding: false,
-    label: '200 Day Moving Average',
-  },
-  {
-    id: 'SharesOutstanding',
-    numeric: true,
-    disablePadding: false,
-    label: 'Shares Outstanding',
-  },
-  {
-    id: 'Price',
-    numeric: true,
-    disablePadding: false,
-    label: 'Price',
-  },
-  {
-    id: 'Quantity',
-    numeric: true,
-    disablePadding: false,
-    label: 'Quantity',
-  },
-  {
-    id: 'Invested',
-    numeric: true,
-    disablePadding: false,
-    label: 'Invested',
-  },
-  {
-    id: 'Weight',
-    numeric: true,
-    disablePadding: false,
-    label: 'Weight',
-  },
+  { id: 'ticker', numeric: false, disablePadding: true, label: 'Ticker' },
+  { id: 'Company', numeric: false, disablePadding: false, label: 'Company' },
+  { id: 'Sector', numeric: false, disablePadding: false, label: 'Sector' },
+  { id: 'Industry', numeric: false, disablePadding: false, label: 'Industry' },
+  { id: 'Market', numeric: false, disablePadding: false, label: 'Market' },
+  { id: 'PE', numeric: true, disablePadding: false, label: 'PE' },
+  { id: 'EPS', numeric: true, disablePadding: false, label: 'EPS' },
+  { id: 'MarketCap', numeric: true, disablePadding: false, label: 'Market Cap' },
+  { id: 'BookValue', numeric: true, disablePadding: false, label: 'Book Value' },
+  { id: 'DividendYield', numeric: true, disablePadding: false, label: 'Dividend Yield' },
+  { id: 'EBITDA', numeric: true, disablePadding: false, label: 'EBITDA' },
+  { id: 'PriceToSalesTrailing12Months', numeric: true, disablePadding: false, label: 'Price to Sales' },
+  { id: 'FiftyTwoWeekHigh', numeric: true, disablePadding: false, label: '52 Week High' },
+  { id: 'FiftyTwoWeekLow', numeric: true, disablePadding: false, label: '52 Week Low' },
+  { id: 'FiftyDayMovingAverage', numeric: true, disablePadding: false, label: '50 Day Moving Average' },
+  { id: 'TwoHundredDayMovingAverage', numeric: true, disablePadding: false, label: '200 Day Moving Average' },
+  { id: 'SharesOutstanding', numeric: true, disablePadding: false, label: 'Shares Outstanding' },
+  { id: 'Price', numeric: true, disablePadding: false, label: 'Price' },
+  { id: 'Quantity', numeric: true, disablePadding: false, label: 'Quantity' },
+  { id: 'Invested', numeric: true, disablePadding: false, label: 'Invested' },
+  { id: 'Weight', numeric: true, disablePadding: false, label: 'Weight' },
 ];
-
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
@@ -266,6 +102,7 @@ function stableSort<T>(array: readonly T[], comparator: (a: T, b: T) => number) 
   return stabilizedThis.map((el) => el[0]);
 }
 
+
 interface EnhancedTableProps {
   numSelected: number;
   onRequestSort: (event: React.MouseEvent<unknown>, property: keyof Data) => void;
@@ -277,7 +114,6 @@ interface EnhancedTableProps {
 
 function EnhancedTableHead(props: EnhancedTableProps) {
   const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
-  
   const createSortHandler = (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
     onRequestSort(event, property);
   };
@@ -290,9 +126,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             indeterminate={numSelected > 0 && numSelected < rowCount}
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
-            inputProps={{
-              'aria-label': 'select all stocks',
-            }}
+            inputProps={{ 'aria-label': 'select all stocks' }}
             sx={{ verticalAlign: 'middle' }}
           />
         </th>
@@ -300,12 +134,12 @@ function EnhancedTableHead(props: EnhancedTableProps) {
           <th
             key={headCell.id}
             aria-sort={orderBy === headCell.id ? (order === 'asc' ? 'ascending' : 'descending') : undefined}
-              sx={{
-    width: headCell.id === 'PriceToSalesTrailing12Months' ? 300 : headCell.numeric ? 200 : 'auto', // Adjust width for specific columns
-    minWidth: headCell.id === 'PriceToSalesTrailing12Months' ? 250 : headCell.numeric ? 150 : 100, // Adjust minWidth for specific columns
-    whiteSpace: 'normal', // Allow text wrapping
-    wordBreak: 'break-word', // Break words if they are too long
-  }}
+            style={{
+              width: headCell.id === 'PriceToSalesTrailing12Months' ? 150 : headCell.numeric ? 100 : 'auto',
+              minWidth: headCell.id === 'PriceToSalesTrailing12Months' ? 100 : headCell.numeric ? 80 : 70,
+              whiteSpace: 'normal',
+              wordBreak: 'break-word',
+            }}
           >
             <Link
               underline="none"
@@ -334,9 +168,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
     </thead>
   );
 }
-
-
-
 
 export default function TableSelection() {
   const [order, setOrder] = useState<Order>('asc');
@@ -414,9 +245,9 @@ export default function TableSelection() {
       sx={{
         boxShadow: 'sm',
         borderRadius: 'sm',
-        overflowX: 'auto', // Add this style
+        overflowX: 'auto',
       }}
-        >
+    >
       <Table aria-labelledby="tableTitle" sx={{ overflowX: 'auto' }}>
         <EnhancedTableHead
           numSelected={selected.length}
@@ -439,6 +270,7 @@ export default function TableSelection() {
                   role="checkbox"
                   aria-checked={isItemSelected}
                   onClick={(event) => handleClick(event, stock.id)}
+                  style={{ cursor: 'pointer' }}
                 >
                   <td>
                     <Checkbox
@@ -446,18 +278,10 @@ export default function TableSelection() {
                       inputProps={{ 'aria-labelledby': labelId }}
                     />
                   </td>
-                  <td>{stock.ticker}</td>
                   <td id={labelId}>{stock.ticker}</td>
-                  
-                    {stock.Company}
-                   
-                <Box sx={{ maxWidth: 300, overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                   <td>{stock.Sector}</td>
-                </Box>                  
-                <Box sx={{ maxWidth: 300, overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                  <td>{stock.Industry}</td>
-                </Box>
-                
+                  <td style={{ maxWidth: 150, overflow: 'hidden', textOverflow: 'ellipsis' }}>{stock.Company}</td>
+                  <td style={{ maxWidth: 150, overflow: 'hidden', textOverflow: 'ellipsis' }}>{stock.Sector}</td>
+                  <td style={{ maxWidth: 150, overflow: 'hidden', textOverflow: 'ellipsis' }}>{stock.Industry}</td>
                   <td>{stock.Market}</td>
                   <td>{stock.PE}</td>
                   <td>{stock.EPS}</td>
@@ -480,11 +304,12 @@ export default function TableSelection() {
             })}
         </tbody>
       </Table>
-      <FormControl>
+      <FormControl sx={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
         <Select
           value={rowsPerPage}
           onChange={handleChangeRowsPerPage}
           inputProps={{ 'aria-label': 'Rows per page' }}
+          sx={{ width: 'auto' }}
         >
           <Option value={5}>5</Option>
           <Option value={10}>10</Option>

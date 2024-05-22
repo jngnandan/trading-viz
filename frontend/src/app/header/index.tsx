@@ -30,6 +30,7 @@ import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
 import CurrencyBitcoinRoundedIcon from '@mui/icons-material/CurrencyBitcoinRounded';
 import SettingsBackupRestoreRoundedIcon from '@mui/icons-material/SettingsBackupRestoreRounded';
 import LocalActivityRoundedIcon from '@mui/icons-material/LocalActivityRounded';
+import Link from 'next/link';
 
 
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -96,113 +97,113 @@ export default function Header() {
               minWidth: 200,
             }}
           >  
-            <a href="/"> 
+            <Link href="/"> 
             <MenuItem>
               <ListItemDecorator>
                 <HomeRoundedIcon />
               </ListItemDecorator>
               Home
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/news"> 
+            <Link href="/news"> 
             <MenuItem>
               <ListItemDecorator>
                 <NewspaperRoundedIcon />
               </ListItemDecorator>
               News
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/screener"> 
+            <Link href="/screener"> 
             <MenuItem>
               <ListItemDecorator>
                 <SsidChartRoundedIcon />
               </ListItemDecorator>
               Screener
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/maps"> 
+            <Link href="/maps"> 
             <MenuItem>
               <ListItemDecorator>
                 <MapRoundedIcon />
               </ListItemDecorator>
               Maps
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/groups"> 
+            <Link href="/groups"> 
             <MenuItem>
               <ListItemDecorator>
                 <PeopleOutlineRoundedIcon />
               </ListItemDecorator>
               Groups
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/portfolio"> 
+            <Link href="/portfolio"> 
             <MenuItem>
               <ListItemDecorator>
                 <PieChartOutlineRoundedIcon />
               </ListItemDecorator>
               Portfolio
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/insider"> 
+            <Link href="/insider"> 
             <MenuItem>
               <ListItemDecorator>
                 <PlagiarismRoundedIcon />
               </ListItemDecorator>
               Insider
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/futures"> 
+            <Link href="/futures"> 
             <MenuItem>
               <ListItemDecorator>
                 <InsightsRoundedIcon />
               </ListItemDecorator>
               Features
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/forex"> 
+            <Link href="/forex"> 
             <MenuItem>
               <ListItemDecorator>
                 <QueryStatsRoundedIcon />
               </ListItemDecorator>
               Forex
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/crypto"> 
+            <Link href="/crypto"> 
             <MenuItem>
               <ListItemDecorator>
                 <CurrencyBitcoinRoundedIcon />
               </ListItemDecorator>
               Crypto
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/backtests">
+            <Link href="/backtests">
             <MenuItem>
               <ListItemDecorator>
                 <SettingsBackupRestoreRoundedIcon />
               </ListItemDecorator>
               Backtests
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
-            <a href="/elite">
+            <Link href="/elite">
             <MenuItem>
               <ListItemDecorator>
                 <LocalActivityRoundedIcon />
               </ListItemDecorator>
               Elite
             </MenuItem>
-            </a>
+            </Link>
             {/* <ListDivider /> */}
             {/* <MenuItem>Pricing</MenuItem>
             <MenuItem>New</MenuItem> */}
